@@ -14,6 +14,6 @@
 | `Sources/PixSEOCore/Smart` | `SaliencyAnalyzer` + `SmartCropPlacement`, `WatermarkPlacementAdvisor`, `ContentAnalyzer` |
 | `Sources/PixSEOCore/AI`, `SEO` | `NameSuggestion`, `HeuristicNameSuggester`, `OnDeviceNameSuggester`, `VietnameseLabelDictionary`, `SEOChecklist` |
 | `Sources/PixSEOApp` | `AppDelegate`, `IntakeRouter`, `SenderVerifier`; `QuickSave/`, `Editor/`, `Crop/`, `Watermark/`, `Components/` (ExportOptions, FileNaming, SizeEstimator, SuggestionModel, NameSection…), `Home/`, `Settings/`, `Toast/`, `Support/` |
-| `Tests/` | 74 test: request, đặt tên, hình học, engine, advisor, crop, watermark, AI heuristic, checklist |
+| `Tests/` | 75 test: request, đặt tên, hình học, engine, advisor, crop, watermark, AI heuristic, checklist |
 | `scripts/` | `build-app.sh`, `install.sh`, `test.sh`, `make-dmg.sh`, `make-icon.sh` + `IconRenderer.swift` |
 | `Resources/` | Info.plist app + extension, entitlements, `AppIcon.icns`, hướng dẫn trong DMG |
