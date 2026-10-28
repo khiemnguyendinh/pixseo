@@ -1,5 +1,6 @@
 import CoreGraphics
-import CoreImage
+// Older SDKs (Xcode 16) don't mark CIContext Sendable yet; it is thread-safe.
+@preconcurrency import CoreImage
 
 /// Pixel work for one frame: rotate and flip, crop, resize with Lanczos, light sharpening,
 /// optional flattening onto white, render to 8-bit sRGB, then the watermark.
