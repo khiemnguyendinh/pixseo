@@ -89,6 +89,17 @@ struct CropMathTests {
         #expect(try ExportService().render(job).pixelSize == PixelSize(width: 1200, height: 630))
     }
 
+    @Test func squareCropOfLandscapeStaysSquare() throws {
+        let dir = try FixtureFactory.makeDirectory()
+        let url = try FixtureFactory.write([FixtureFactory.photo(width: 3000, height: 2000)], to: dir.appendingPathComponent("s.png"), type: .png)
+        let image = PixelSize(width: 3000, height: 2000)
+        let rect = SmartCropPlacement.place(aspect: 1, in: image, boxes: SubjectBoxes(subjects: [CGRect(x: 0.31, y: 0.4, width: 0.2, height: 0.2)]))
+        #expect(OutputGeometry.croppedSize(source: image, crop: CropSpec(rect: rect)) == PixelSize(width: 2000, height: 2000))
+        let job = ExportJob(source: url, recipe: EditRecipe(crop: CropSpec(rect: rect), resize: ResizeSpec(value: 1920)),
+                            settings: ExportSettings(), destination: dir.appendingPathComponent("o.webp"))
+        #expect(try ExportService().render(job).pixelSize == PixelSize(width: 1920, height: 1920))
+    }
+
     @Test func crop16by9At1920() throws {
         let dir = try FixtureFactory.makeDirectory()
         let url = try FixtureFactory.write([FixtureFactory.photo(width: 3000, height: 2000)], to: dir.appendingPathComponent("p.png"), type: .png)

@@ -13,10 +13,12 @@ public enum OutputGeometry {
     /// Crop rectangle in pixels, top-left origin, inside the rotated image. Clamped and at least 1 px.
     public static func cropPixelRect(in rotated: PixelSize, crop: CropSpec) -> CGRect {
         let full = CGRect(x: 0, y: 0, width: rotated.width, height: rotated.height)
+        // Round origin and size separately: `.integral` grows the rect outward, so floating-point
+        // noise turned a 2000 px square into 2001×2000 and a 1:1 export into 1920×1919.
         let raw = CGRect(
-            x: crop.rect.minX * CGFloat(rotated.width), y: crop.rect.minY * CGFloat(rotated.height),
-            width: crop.rect.width * CGFloat(rotated.width), height: crop.rect.height * CGFloat(rotated.height)
-        ).integral.intersection(full)
+            x: (crop.rect.minX * CGFloat(rotated.width)).rounded(), y: (crop.rect.minY * CGFloat(rotated.height)).rounded(),
+            width: (crop.rect.width * CGFloat(rotated.width)).rounded(), height: (crop.rect.height * CGFloat(rotated.height)).rounded()
+        ).intersection(full)
         guard !raw.isNull, raw.width >= 1, raw.height >= 1 else { return full }
         return raw
     }

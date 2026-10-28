@@ -44,12 +44,15 @@ struct CropInspectorView: View {
 
     private func ratioButton(_ preset: AspectRatioPreset) -> some View {
         let selected = model.aspect == preset
-        return Button { model.aspect = preset } label: {
-            Text(preset.label).frame(maxWidth: .infinity)
+        return Group {
+            if selected {
+                Button { model.aspect = preset } label: { Text(preset.label).frame(maxWidth: .infinity) }
+                    .buttonStyle(.borderedProminent)
+            } else {
+                Button { model.aspect = preset } label: { Text(preset.label).frame(maxWidth: .infinity) }
+                    .buttonStyle(.bordered)
+            }
         }
-        .buttonStyle(.bordered)
-        .tint(selected ? .accentColor : nil)
-        .background(selected ? Color.accentColor.opacity(0.18) : .clear, in: RoundedRectangle(cornerRadius: 6))
     }
 }
 

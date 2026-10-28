@@ -16,9 +16,9 @@ struct HomeView: View {
             dropZone
             ExtensionStatusView()
             if !settings.preferences.onboardingDone { onboarding }
-            HStack {
+            HStack(alignment: .top) {
                 Text("Chuột phải ảnh trong Finder → Quick Resize, Quick Crop, Quick Watermark.")
-                    .font(.callout).foregroundStyle(.secondary)
+                    .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 Spacer()
                 Button("Cài đặt…", action: onSettings)
             }
