@@ -1,0 +1,30 @@
+PixSEO — Hướng dẫn cài đặt / Installation guide
+================================================
+
+TIẾNG VIỆT
+1. Kéo PixSEO vào thư mục Applications (biểu tượng bên cạnh).
+2. Mở Applications, nhấp đúp PixSEO. macOS báo "không thể mở vì Apple không thể kiểm tra…":
+   bấm Xong (Done).
+3. Mở Cài đặt hệ thống › Quyền riêng tư & Bảo mật, kéo xuống mục Bảo mật,
+   bấm "Vẫn mở" (Open Anyway) cạnh dòng PixSEO, nhập mật khẩu máy, rồi bấm Mở.
+   Chỉ cần làm một lần.
+4. Cửa sổ PixSEO hiện ra. Nếu báo "Menu chuột phải chưa bật", bấm "Bật ngay" và tích PixSEO
+   trong mục Finder.
+5. Chuột phải một ảnh trong Finder → Quick Resize / Quick Crop / Quick Watermark.
+
+Vì sao có bước 3? PixSEO là phần mềm miễn phí, chưa ký bằng tài khoản Apple Developer trả phí,
+nên macOS hỏi xác nhận một lần. Mã nguồn công khai trên GitHub.
+
+Gỡ cài đặt: thoát PixSEO, kéo PixSEO.app trong Applications vào Thùng rác.
+Thiết lập và preset watermark nằm ở ~/Library/Application Support/PixSEO (xóa nếu muốn).
+
+ENGLISH
+1. Drag PixSEO into Applications.
+2. Double-click PixSEO in Applications. macOS says it "cannot verify" the app: click Done.
+3. Open System Settings › Privacy & Security, scroll to Security, click "Open Anyway" next to
+   PixSEO, enter your password, then click Open. Needed once.
+4. If PixSEO says the right-click menu is off, click "Bật ngay" (Enable) and tick PixSEO under Finder.
+5. Right-click an image in Finder → Quick Resize / Quick Crop / Quick Watermark.
+
+Why step 3? PixSEO is free and not signed with a paid Apple Developer account, so macOS asks
+once. The source code is public on GitHub.

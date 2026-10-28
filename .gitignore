@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+build/
+dist/
+*.app
+*.dmg
+.swiftpm/
+release/
+# Internal working notes (planning, reviews); kept local.
+plans/
